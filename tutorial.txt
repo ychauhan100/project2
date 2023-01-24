@@ -1,0 +1,9 @@
+#These are the commands to cleasr all images and container
+docker rm -vf $(docker ps -aq)
+docker rmi -f $(docker images -aq)
+
+
+#These are the Shell commands to create image and container
+sudo docker rm -f $(sudo docker ps -a -q)
+docker build -t my-apache2 .
+docker run -dit --name my-running-app -p 80:80 my-apache2
