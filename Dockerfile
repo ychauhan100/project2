@@ -1,5 +1,3 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install apache2 -y
-EXPOSE 80
+FROM httpd:2.4
+COPY . /usr/local/apache2/htdocs/
 
