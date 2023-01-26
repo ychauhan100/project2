@@ -13,7 +13,15 @@ FROM httpd:2.4
 COPY . /usr/local/apache2/htdocs/
 
 
-#Install JDK in amazon Linux
+
+#Install these in amazon Linux
+#!/bin/bash
+sudo yum update -y
 sudo amazon-linux-extras install java-openjdk11 -y
 sudo yum install docker -y
 sudo systemctl start docker
+
+#Always add docker user in sudo by applying follow commands
+
+usermod -aG docker $USER
+newgrp docker
