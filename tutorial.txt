@@ -11,3 +11,9 @@ docker run -dit --name my-running-app -p 80:80 my-apache2
 
 FROM httpd:2.4
 COPY . /usr/local/apache2/htdocs/
+
+
+#Install JDK in amazon Linux
+sudo amazon-linux-extras install java-openjdk11 -y
+sudo yum install docker -y
+sudo systemctl start docker
